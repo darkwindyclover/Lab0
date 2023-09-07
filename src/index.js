@@ -2,6 +2,17 @@ alert("Let's integrate!");
 p1 = prompt("First point", 0);
 p2 = prompt("Second point", 0);
 function calculate(a, b, integFunc) {
+    if (isNaN(a) || isNaN(b))
+        alert("Wrong input!")      
+    else {
+        a = Math.round(a)
+        b = Math.round(b)
+    }
+    if (a > b) {
+        c = a
+        a = b
+        b = c
+    }
     n = 10000  
     prevSum = 0
     sum = 0
@@ -17,7 +28,7 @@ function calculate(a, b, integFunc) {
         prevSum = sum
     }
     
-    alert("Ready:" + sum);
+    alert("Ready:" + Math.round(sum));
 }
 
 function Func3(x) {
